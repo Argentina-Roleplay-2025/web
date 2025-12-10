@@ -384,315 +384,7 @@
       text-transform: uppercase;
       margin-top: 5px;
     }
-
-    /* About Us Section */
-    .about-us {
-      margin: 80px 0;
-      padding: 60px 0;
-    }
-
-    .about-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-content p {
-      font-size: 18px;
-      line-height: 1.9;
-      color: var(--text-muted);
-      margin-bottom: 25px;
-    }
-
-    .about-highlight {
-      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(181, 55, 255, 0.1));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 40px;
-      margin-top: 40px;
-      backdrop-filter: blur(10px);
-    }
-
-    .about-highlight h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Purpose Section */
-    .purpose {
-      margin: 80px 0;
-      position: relative;
-    }
-
-    .purpose-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .purpose-item {
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(20, 24, 36, 0.9));
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .purpose-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
-      background-size: 200% 100%;
-      animation: gradientMove 3s linear infinite;
-    }
-
-    .purpose-item:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent-blue);
-      box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
-    }
-
-    .purpose-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-      display: inline-block;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .purpose-item h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-      color: var(--text-light);
-    }
-
-    .purpose-item p {
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 16px;
-    }
     
-    /* Nosotros Section */
-    .nosotros {
-      margin: 80px 0;
-      padding: 60px 0;
-    }
-
-    .nosotros-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .nosotros-content p {
-      font-size: 18px;
-      line-height: 1.9;
-      color: var(--text-muted);
-      margin-bottom: 25px;
-    }
-
-    .nosotros-highlight {
-      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(181, 55, 255, 0.1));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 40px;
-      margin-top: 40px;
-      backdrop-filter: blur(10px);
-    }
-
-    .nosotros-highlight h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Proposito Section */
-    .proposito {
-      margin: 80px 0;
-      position: relative;
-    }
-
-    .proposito-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .proposito-item {
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(20, 24, 36, 0.9));
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .proposito-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
-      background-size: 200% 100%;
-      animation: gradientMove 3s linear infinite;
-    }
-
-    .proposito-item:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent-blue);
-      box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
-    }
-
-    .proposito-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-      display: inline-block;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .proposito-item h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-      color: var(--text-light);
-    }
-
-    .proposito-item p {
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    /* Equipo Section */
-    .equipo {
-      margin: 80px 0;
-      padding: 60px 0;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 25px;
-      margin-top: 50px;
-    }
-
-    .team-member {
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.8), rgba(20, 24, 36, 0.8));
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .team-member::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-    }
-
-    .team-member:hover::after {
-      transform: scaleX(1);
-    }
-
-    .team-member:hover {
-      transform: translateY(-10px) scale(1.02);
-      border-color: var(--accent-blue);
-      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
-    }
-
-    .member-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      border: 3px solid var(--accent-blue);
-      object-fit: cover;
-      transition: all 0.3s ease;
-      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 900;
-      color: white;
-    }
-
-    .member-avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .team-member:hover .member-avatar {
-      transform: scale(1.1) rotate(5deg);
-      border-color: var(--accent-purple);
-      box-shadow: 0 0 30px var(--glow);
-    }
-
-    .member-name {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      background: linear-gradient(90deg, var(--accent-blue), white);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .member-role {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .member-info {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
     /* Features Section */
     .features {
       margin: 80px 0;
@@ -769,108 +461,6 @@
     .feature-card p {
       color: var(--text-muted);
       line-height: 1.6;
-    }
-
-    /* Moderation Team Section */
-    .moderation-team {
-      margin: 80px 0;
-      padding: 60px 0;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 25px;
-      margin-top: 50px;
-    }
-
-    .team-member {
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.8), rgba(20, 24, 36, 0.8));
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .team-member::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-    }
-
-    .team-member:hover::after {
-      transform: scaleX(1);
-    }
-
-    .team-member:hover {
-      transform: translateY(-10px) scale(1.02);
-      border-color: var(--accent-blue);
-      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
-    }
-
-    .member-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      border: 3px solid var(--accent-blue);
-      object-fit: cover;
-      transition: all 0.3s ease;
-      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 900;
-      color: white;
-    }
-
-    .member-avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .team-member:hover .member-avatar {
-      transform: scale(1.1) rotate(5deg);
-      border-color: var(--accent-purple);
-      box-shadow: 0 0 30px var(--glow);
-    }
-
-    .member-name {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      background: linear-gradient(90deg, var(--accent-blue), white);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .member-role {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .member-info {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     /* Memberships Section */
@@ -1020,35 +610,6 @@
       .hero-content h2 {
         font-size: 42px;
       }
-
-      .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 20px;
-      }
-
-      .member-avatar {
-        width: 80px;
-        height: 80px;
-        font-size: 32px;
-      }
-
-      .purpose-grid {
-        grid-template-columns: 1fr;
-      }
-      .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 20px;
-      }
-
-      .member-avatar {
-        width: 80px;
-        height: 80px;
-        font-size: 32px;
-      }
-
-      .proposito-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -1071,9 +632,6 @@
       
       <div class="nav-links">
         <a href="#inicio">Inicio</a>
-        <a href="#about">Nosotros</a>
-        <a href="#purpose">Propósito</a>
-        <a href="#team">Equipo</a>
         <a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit?utm_content=DAG1z80J_O8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Normativas</a>
         <a href="#memberships">Membresías</a>
         <a href="https://www.roblox.com/es/communities/33453357/Argentina-RP-Spanish-ER-LC#!/about" target="_blank">Roblox</a>
@@ -1091,4 +649,157 @@
         </p>
         <div class="hero-buttons">
           <a href="https://discord.gg/argentina-rp-er-lc-1349870169056350270" class="btn btn-primary" target="_blank">Unirse Ahora</a>
-          <a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit?utm_content=DAG1z80J_O8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn btn-secondary" target="_blank">Ver Normativas
+          <a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit?utm_content=DAG1z80J_O8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn btn-secondary" target="_blank">Ver Normativas</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="floating-card">
+          <h3>🎮 Comenzá Ya</h3>
+          <p>Creá el DNI de tu personaje y preparate para una aventura</p>
+          <div class="stats">
+            <div class="stat-item">
+              <div class="stat-number">1150+</div>
+              <div class="stat-label">Miembros</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Activos</div>
+            </div>
+          </div>
+          <a href="https://discord.gg/argentina-rp-er-lc-1349870169056350270" class="btn btn-primary" target="_blank" style="width: 100%; margin-top: 20px;">Unirse al Discord</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <h2 class="section-title">¿Por qué Argentina RP?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👮</div>
+          <h3>Facciones Legales</h3>
+          <p>Policía de la Ciudad, Gendarmería, Policía Federal Argentina y más organizaciones para unirte.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎭</div>
+          <h3>Roleplay Auténtico</h3>
+          <p>Experimentá la adrenalina de ser un mafioso y combatir con las autoridades.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎉</div>
+          <h3>Eventos Exclusivos</h3>
+          <p>Participá en eventos, gana premios, senti el verdadero roleplay.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Sistema Económico</h3>
+          <p>Trabajá, ganá dinero, creá tu empresa y construí tu imperio en el servidor.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Recompensas</h3>
+          <p>Sistema de Membersias, beneficios exclusivos y recompensas por participación activa.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Comunidad Activa</h3>
+          <p>Staff dedicado 24/7, comunidad amigable y soporte constante para todos los jugadores.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memberships Section -->
+    <section id="memberships" class="memberships">
+      <h2 class="section-title">Membresías Exclusivas</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">
+        Potenciá tu experiencia con beneficios únicos
+      </p>
+      
+      <div class="memberships-grid">
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 1</div>
+            <span class="badge">Nivel 1</span>
+          </div>
+          <div class="membership-price">50 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$40,000 en efectivo inicial</li>
+            <li>Rol exclusivo Membresía 1</li>
+            <li>Acceso a canales especiales</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/954298347" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 2</div>
+            <span class="badge">Nivel 2</span>
+          </div>
+          <div class="membership-price">100 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$100,000 en efectivo inicial</li>
+            <li>Rol exclusivo Membresía 2</li>
+            <li>Enviar imágenes en Discord</li>
+            <li>Acceso a sorteos exclusivos</li>
+            <li>Prioridad en eventos</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/854716479" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 3</div>
+            <span class="badge">VIP</span>
+          </div>
+          <div class="membership-price">250 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$175,000 en efectivo inicial</li>
+            <li>Rol exclusivo Membresía 3</li>
+            <li>1 trabajo garantizado</li>
+            <li>Cupo en facción ilegal</li>
+            <li>Todos los beneficios anteriores</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/854400540" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 4</div>
+            <span class="badge">Diamante</span>
+          </div>
+          <div class="membership-price">500 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$250,000 en efectivo inicial</li>
+            <li>Rol exclusivo Patrocinador</li>
+            <li>Cupo de empresa GRATIS</li>
+            <li>Insignia especial</li>
+            <li>Todos los beneficios anteriores</li>
+            <li>Rol exclusivo Membersia 4</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/854768466" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© <span id="year"></span> Argentina RP ┊ ER:LC — Todos los derechos reservados</p>
+      <p style="margin-top: 10px;">Programador: <a href="#">@vladimirfernan</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Stars
+    const starsContainer = document.getElementById('stars');
+    for
+
