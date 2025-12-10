@@ -578,186 +578,6 @@
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
     }
-
-    /* About Section */
-    .about-section {
-      margin: 100px 0;
-      position: relative;
-    }
-    
-    .about-container {
-      background: linear-gradient(135deg, rgba(181, 55, 255, 0.05), rgba(0, 212, 255, 0.05));
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
-      padding: 60px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .about-container::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: pulse-glow 4s ease-in-out infinite;
-    }
-    
-    .about-container::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(181, 55, 255, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: pulse-glow 4s ease-in-out infinite 2s;
-    }
-    
-    @keyframes pulse-glow {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-    }
-    
-    .about-content {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-    
-    .about-text h2 {
-      font-size: 48px;
-      font-weight: 900;
-      margin-bottom: 30px;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.2;
-    }
-    
-    .about-text .highlight {
-      display: inline-block;
-      padding: 8px 18px;
-      background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(181, 55, 255, 0.2));
-      border-radius: 12px;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      margin-bottom: 25px;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--accent-blue);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .about-text p {
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-    
-    .about-text p:last-child {
-      margin-bottom: 0;
-    }
-    
-    .about-visual {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .value-cards {
-      display: grid;
-      gap: 20px;
-    }
-    
-    .value-card {
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.95), rgba(20, 24, 36, 0.95));
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 25px 30px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .value-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
-      transition: width 0.4s ease;
-    }
-    
-    .value-card:hover::before {
-      width: 100%;
-      opacity: 0.1;
-    }
-    
-    .value-card:hover {
-      transform: translateX(10px);
-      border-color: var(--accent-blue);
-      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
-    }
-    
-    .value-card-header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 12px;
-    }
-    
-    .value-icon {
-      font-size: 32px;
-      filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
-    }
-    
-    .value-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-light);
-    }
-    
-    .value-card p {
-      color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.6;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .mission-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 61, 154, 0.2));
-      border: 1px solid rgba(255, 107, 53, 0.4);
-      border-radius: 25px;
-      margin-top: 25px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--accent-orange);
-    }
-    
-    .mission-badge span {
-      font-size: 18px;
-    }
     
     /* Footer */
     footer {
@@ -790,19 +610,6 @@
       .hero-content h2 {
         font-size: 42px;
       }
-
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .about-container {
-        padding: 40px 30px;
-      }
-      
-      .about-text h2 {
-        font-size: 36px;
-      }
     }
   </style>
 </head>
@@ -825,7 +632,6 @@
       
       <div class="nav-links">
         <a href="#inicio">Inicio</a>
-        <a href="#quienes-somos">¿Quiénes Somos?</a>
         <a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit?utm_content=DAG1z80J_O8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Normativas</a>
         <a href="#memberships">Membresías</a>
         <a href="https://www.roblox.com/es/communities/33453357/Argentina-RP-Spanish-ER-LC#!/about" target="_blank">Roblox</a>
@@ -861,3 +667,141 @@
               <div class="stat-label">Activos</div>
             </div>
           </div>
+          <a href="https://discord.gg/argentina-rp-er-lc-1349870169056350270" class="btn btn-primary" target="_blank" style="width: 100%; margin-top: 20px;">Unirse al Discord</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <h2 class="section-title">¿Por qué Argentina RP?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👮</div>
+          <h3>Facciones Legales</h3>
+          <p>Policía de la Ciudad, Gendarmería, Policía Federal Argentina y más organizaciones para unirte.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎭</div>
+          <h3>Roleplay Auténtico</h3>
+          <p>Experimentá la adrenalina de ser un mafioso y combatir con las autoridades.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎉</div>
+          <h3>Eventos Exclusivos</h3>
+          <p>Participá en eventos, gana premios, senti el verdadero roleplay.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Sistema Económico</h3>
+          <p>Trabajá, ganá dinero, creá tu empresa y construí tu imperio en el servidor.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Recompensas</h3>
+          <p>Sistema de Membersias, beneficios exclusivos y recompensas por participación activa.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Comunidad Activa</h3>
+          <p>Staff dedicado 24/7, comunidad amigable y soporte constante para todos los jugadores.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memberships Section -->
+    <section id="memberships" class="memberships">
+      <h2 class="section-title">Membresías Exclusivas</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">
+        Potenciá tu experiencia con beneficios únicos
+      </p>
+      
+      <div class="memberships-grid">
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 1</div>
+            <span class="badge">Nivel 1</span>
+          </div>
+          <div class="membership-price">50 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$40,000 en efectivo inicial</li>
+            <li>Rol exclusivo Membresía 1</li>
+            <li>Acceso a canales especiales</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/954298347" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 2</div>
+            <span class="badge">Nivel 2</span>
+          </div>
+          <div class="membership-price">100 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$100,000 en efectivo inicial</li>
+            <li>Rol exclusivo Membresía 2</li>
+            <li>Enviar imágenes en Discord</li>
+            <li>Acceso a sorteos exclusivos</li>
+            <li>Prioridad en eventos</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/854716479" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 3</div>
+            <span class="badge">VIP</span>
+          </div>
+          <div class="membership-price">250 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$175,000 en efectivo inicial</li>
+            <li>Rol exclusivo Membresía 3</li>
+            <li>1 trabajo garantizado</li>
+            <li>Cupo en facción ilegal</li>
+            <li>Todos los beneficios anteriores</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/854400540" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+
+        <div class="membership-card">
+          <div class="membership-header">
+            <div class="membership-title">Membresía 4</div>
+            <span class="badge">Diamante</span>
+          </div>
+          <div class="membership-price">500 <span style="font-size: 20px;">Robux</span></div>
+          <ul class="membership-benefits">
+            <li>$250,000 en efectivo inicial</li>
+            <li>Rol exclusivo Patrocinador</li>
+            <li>Cupo de empresa GRATIS</li>
+            <li>Insignia especial</li>
+            <li>Todos los beneficios anteriores</li>
+            <li>Rol exclusivo Membersia 4</li>
+          </ul>
+          <a href="https://www.roblox.com/game-pass/854768466" class="btn-buy" target="_blank">Comprar Ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© <span id="year"></span> Argentina RP ┊ ER:LC — Todos los derechos reservados</p>
+      <p style="margin-top: 10px;">Programador: <a href="#">@vladimirfernan</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Stars
+    const starsContainer = document.getElementById('stars');
+    for
+
+</body>
+</html>
