@@ -1,809 +1,706 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Argentina RP ┊ ER:LC</title>
-  <link rel="icon" href="https://images-ext-1.discordapp.net/external/KqfyaYjeenvTHeaybPox0LT-APjdtSX-RoFyrrlZsfs/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1255946816898207834/18a5536133ff77c46881558ccbc4ff0b.png?format=webp&quality=lossless&width=527&height=527" />
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
-    
-    :root {
-      --bg-dark: #0a0e1a;
-      --bg-darker: #050810;
-      --accent-blue: #00d4ff;
-      --accent-purple: #b537ff;
-      --accent-orange: #ff6b35;
-      --accent-pink: #ff3d9a;
-      --text-light: #ffffff;
-      --text-muted: #a8b2d1;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --glow: rgba(0, 212, 255, 0.4);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-darker);
-      color: var(--text-light);
-      overflow-x: hidden;
-      position: relative;
-    }
-    
-    /* Animated Background */
-    .bg-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      overflow: hidden;
-      background: radial-gradient(ellipse at top, #0a0e1a, #050810);
-    }
-    
-    .bg-animation::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(181, 55, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
-      animation: bgRotate 20s linear infinite;
-    }
-    
-    @keyframes bgRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
-    
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 3s infinite;
-    }
-    
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-    
-    /* Container */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 20px;
-      position: relative;
-      z-index: 10;
-    }
-    
-    /* Navbar */
-    .navbar {
-      position: sticky;
-      top: 20px;
-      background: rgba(10, 14, 26, 0.8);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 15px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 40px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      z-index: 1000;
-      animation: slideDown 0.6s ease;
-    }
-    
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    
-    .logo {
-      width: 55px;
-      height: 55px;
-      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 18px;
-      box-shadow: 0 0 30px var(--glow);
-      animation: pulse 2s infinite;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .logo::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-      transform: translateX(-100%) translateY(-100%) rotate(45deg);
-      animation: shine 3s infinite;
-    }
-    
-    @keyframes shine {
-      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    
-    .brand-text h1 {
-      font-size: 20px;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .brand-text small {
-      color: var(--text-muted);
-      font-size: 12px;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    
-    .nav-links a {
-      padding: 10px 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 600;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .nav-links a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: left 0.5s;
-    }
-    
-    .nav-links a:hover::before {
-      left: 100%;
-    }
-    
-    .nav-links a:hover {
-      color: var(--text-light);
-      background: rgba(255, 255, 255, 0.05);
-      transform: translateY(-2px);
-    }
-    
-    .btn-discord {
-      background: linear-gradient(135deg, #5865F2, #7289da);
-      color: white !important;
-      box-shadow: 0 4px 20px rgba(88, 101, 242, 0.4);
-    }
-    
-    .btn-discord:hover {
-      box-shadow: 0 6px 30px rgba(88, 101, 242, 0.6);
-      transform: translateY(-3px);
-    }
-    
-    /* Hero Section */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin: 60px 0;
-      align-items: center;
-      animation: fadeIn 0.8s ease;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .hero-content h2 {
-      font-size: 56px;
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 5s ease infinite;
-      background-size: 200% 200%;
-    }
-    
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    .hero-content p {
-      font-size: 18px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    
-    .btn {
-      padding: 15px 35px;
-      border-radius: 15px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-      color: white;
-      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.5);
-    }
-    
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: white;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--accent-blue);
-      transform: translateY(-3px);
-    }
-    
-    .hero-visual {
-      position: relative;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .floating-card {
-      background: linear-gradient(135deg, rgba(181, 55, 255, 0.1), rgba(0, 212, 255, 0.1));
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      padding: 40px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      animation: float 6s ease-in-out infinite;
-      position: relative;
-      z-index: 2;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(2deg); }
-    }
-    
-    .floating-card h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, var(--accent-blue), white);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .floating-card p {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-    
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 20px;
-    }
-    
-    .stat-item {
-      text-align: center;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-    }
-    
-    .stat-number {
-      font-size: 32px;
-      font-weight: 900;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .stat-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-top: 5px;
-    }
-    
-    /* Features Section */
-    .features {
-      margin: 80px 0;
-    }
-    
-    .section-title {
-      text-align: center;
-      font-size: 42px;
-      font-weight: 900;
-      margin-bottom: 50px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    
-    .feature-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 35px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-    
-    .feature-card:hover::before {
-      opacity: 1;
-      animation: rotate 4s linear infinite;
-    }
-    
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent-blue);
-      box-shadow: 0 15px 50px rgba(0, 212, 255, 0.3);
-    }
-    
-    .feature-icon {
-      font-size: 40px;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-    
-    .feature-card h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: var(--text-light);
-    }
-    
-    .feature-card p {
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    
-    /* Memberships Section */
-    .memberships {
-      margin: 80px 0;
-    }
-    
-    .memberships-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    
-    .membership-card {
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(20, 24, 36, 0.9));
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      padding: 35px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .membership-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
-      background-size: 200% 100%;
-      animation: gradientMove 3s linear infinite;
-    }
-    
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-    
-    .membership-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      border-color: var(--accent-blue);
-      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.4);
-    }
-    
-    .membership-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    
-    .membership-title {
-      font-size: 24px;
-      font-weight: 700;
-    }
-    
-    .badge {
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-      color: white;
-    }
-    
-    .membership-price {
-      font-size: 48px;
-      font-weight: 900;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 20px 0;
-    }
-    
-    .membership-benefits {
-      list-style: none;
-      margin: 20px 0;
-    }
-    
-    .membership-benefits li {
-      padding: 10px 0;
-      color: var(--text-muted);
-      position: relative;
-      padding-left: 25px;
-    }
-    
-    .membership-benefits li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--accent-blue);
-      font-weight: 900;
-    }
-    
-    .btn-buy {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
-      color: white;
-      text-align: center;
-      border-radius: 15px;
-      text-decoration: none;
-      font-weight: 700;
-      display: block;
-      margin-top: 20px;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-buy:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: 80px;
-    }
-    
-    footer a {
-      color: var(--accent-blue);
-      text-decoration: none;
-    }
-    
-    /* Responsive */
-    @media (max-width: 968px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero-visual {
-        height: 400px;
-      }
-      
-      .nav-links {
-        display: none;
-      }
-      
-      .hero-content h2 {
-        font-size: 42px;
-      }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Argentina Roleplay</title>
+<link rel="icon" href="https://media.discordapp.net/attachments/1349870170893451400/1456790768491561235/image.png?ex=698a6d21&is=69891ba1&hm=f2554f10d3ac7f023c01efed2b462cc883bd847c1bfff0139e926e8e35b2da2d&=&format=webp&quality=lossless&width=527&height=527/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+:root{--noir:#0a0e1a;--charcoal:#141824;--steel:#1e2433;--cyan:#00ffff;--electric:#0ff;--neon:#39ff14;--hot:#ff006e;--gold:#ffd700;--silver:#c0c0c0;--ghost:rgba(255,255,255,.03);--mist:rgba(255,255,255,.08);--fog:rgba(255,255,255,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Rajdhani,sans-serif;background:#000;color:#fff;overflow-x:hidden;line-height:1.6;position:relative}
+canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.6}
+.wrap{position:relative;z-index:10;min-height:100vh}
+.container{max-width:1400px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(20px);background:rgba(10,14,26,.9);border-bottom:1px solid var(--mist);transition:.3s}
+nav.scrolled{background:rgba(10,14,26,.95);box-shadow:0 8px 32px rgba(0,255,255,.2)}
+.nav-content{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1600px;margin:0 auto}
+.logo-box{display:flex;align-items:center;gap:12px;text-decoration:none;transition:.3s}
+.logo-box:hover{transform:translateX(4px)}
+.logo-circle{width:54px;height:54px;background:linear-gradient(135deg,var(--cyan),var(--electric));border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-weight:900;font-size:18px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(0,255,255,.6),inset 0 0 20px rgba(255,255,255,.2);animation:logoPulse 3s ease-in-out infinite}
+@keyframes logoPulse{0%,100%{box-shadow:0 0 40px rgba(0,255,255,.6),inset 0 0 20px rgba(255,255,255,.2)}50%{box-shadow:0 0 60px rgba(0,255,255,.9),inset 0 0 30px rgba(255,255,255,.4)}}
+.logo-circle::before{content:'';position:absolute;inset:-20%;background:conic-gradient(from 0deg,transparent,rgba(255,255,255,.8),transparent);animation:logoSpin 4s linear infinite}
+@keyframes logoSpin{to{transform:rotate(360deg)}}
+.brand-text h1{font-family:Orbitron,sans-serif;font-size:20px;font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--electric),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0;text-transform:uppercase;letter-spacing:2px}
+.brand-text small{font-family:JetBrains Mono,monospace;color:var(--silver);font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links a{padding:12px 24px;border-radius:8px;text-decoration:none;color:var(--silver);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:1px;transition:.3s;position:relative;overflow:hidden}
+.nav-links a::before{content:'';position:absolute;inset:0;background:var(--ghost);transform:translateY(100%);transition:.3s}
+.nav-links a:hover::before{transform:translateY(0)}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a.active{color:var(--cyan);background:rgba(0,255,255,.1)}
+.cta-btn{background:linear-gradient(135deg,var(--cyan),var(--electric))!important;color:#000!important;font-weight:900!important;box-shadow:0 8px 32px rgba(0,255,255,.5)!important}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(0,255,255,.8)!important}
+.mobile-toggle{display:none;background:var(--ghost);border:1px solid var(--mist);border-radius:8px;padding:10px;cursor:pointer}
+.mobile-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:.3s;border-radius:2px}
+.hero{padding:200px 0 140px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:100%;background:radial-gradient(ellipse at top,rgba(0,255,255,.15),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(0,255,255,.1);border:1px solid rgba(0,255,255,.4);border-radius:50px;padding:10px 24px;font-family:JetBrains Mono,monospace;font-size:12px;font-weight:600;color:var(--cyan);margin-bottom:32px;text-transform:uppercase;letter-spacing:2px;animation:fadeInUp .8s ease .1s both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.pulse-dot{width:10px;height:10px;background:var(--neon);border-radius:50%;animation:pulseGlow 2s infinite;box-shadow:0 0 16px var(--neon)}
+@keyframes pulseGlow{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.2)}}
+.hero h1{font-family:Orbitron,sans-serif;font-size:clamp(48px,7vw,84px);font-weight:900;line-height:1.1;margin-bottom:32px;text-transform:uppercase;letter-spacing:4px;animation:fadeInUp .8s ease .2s both}
+.gradient-text{background:linear-gradient(135deg,var(--cyan),var(--electric),var(--neon),var(--hot));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:300% 300%;animation:gradientFlow 6s ease infinite}
+@keyframes gradientFlow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+.hero p{font-size:20px;line-height:1.8;color:var(--silver);margin-bottom:48px;max-width:600px;animation:fadeInUp .8s ease .3s both}
+.hero-actions{display:flex;gap:20px;flex-wrap:wrap;animation:fadeInUp .8s ease .4s both}
+.btn{padding:18px 40px;border-radius:12px;text-decoration:none;font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:2px;transition:.3s;display:inline-flex;align-items:center;gap:12px;position:relative;overflow:hidden;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--electric));color:#000;box-shadow:0 12px 40px rgba(0,255,255,.4)}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--electric),var(--neon));opacity:0;transition:.3s}
+.btn-primary:hover::before{opacity:1}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(0,255,255,.7)}
+.btn span{position:relative;z-index:1}
+.btn-secondary{background:var(--ghost);color:#fff;border:2px solid var(--cyan);backdrop-filter:blur(10px)}
+.btn-secondary:hover{background:rgba(0,255,255,.2);transform:translateY(-4px)}
+.hero-visual{position:relative;height:700px;animation:fadeInUp .8s ease .5s both}
+.stats-mega{position:relative;background:linear-gradient(135deg,rgba(0,255,255,.08),rgba(57,255,20,.08));backdrop-filter:blur(30px);border:2px solid var(--mist);border-radius:32px;padding:56px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(0,255,255,.3);animation:floatCard 8s ease-in-out infinite}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.stats-mega::before{content:'';position:absolute;inset:-4px;background:linear-gradient(45deg,var(--cyan),var(--neon),var(--hot),var(--cyan));border-radius:32px;opacity:.3;filter:blur(20px);z-index:-1;animation:rotateBorder 6s linear infinite}
+@keyframes rotateBorder{to{transform:rotate(360deg)}}
+.stats-mega h3{font-family:Orbitron,sans-serif;font-size:32px;margin-bottom:16px;background:linear-gradient(90deg,var(--cyan),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-transform:uppercase}
+.stats-mega p{color:var(--silver);margin-bottom:40px;font-size:16px}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px}
+.stat-box{background:var(--ghost);border:1px solid var(--mist);border-radius:20px;padding:28px;text-align:center;transition:.3s;cursor:pointer;position:relative;overflow:hidden}
+.stat-box::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(0,255,255,.2),transparent 70%);opacity:0;transition:.3s}
+.stat-box:hover::before{opacity:1}
+.stat-box:hover{transform:translateY(-6px) scale(1.05);border-color:var(--cyan);box-shadow:0 12px 40px rgba(0,255,255,.3)}
+.stat-number{font-family:Orbitron,sans-serif;font-size:42px;font-weight:900;background:linear-gradient(90deg,var(--cyan),var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:8px}
+.stat-label{font-family:JetBrains Mono,monospace;font-size:11px;color:var(--silver);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+.live-banner{background:linear-gradient(135deg,rgba(57,255,20,.12),rgba(0,255,255,.12));border:2px solid rgba(57,255,20,.4);border-radius:24px;padding:32px;margin:100px 0;position:relative;overflow:hidden}
+.live-banner::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);animation:scan 4s infinite}
+@keyframes scan{to{left:100%}}
+.live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;position:relative;z-index:1}
+.live-stat{text-align:center}
+.live-label{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--silver);font-family:JetBrains Mono,monospace;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.live-dot{width:10px;height:10px;background:var(--neon);border-radius:50%;animation:pulseGlow 2s infinite;box-shadow:0 0 20px var(--neon)}
+.live-value{font-family:Orbitron,sans-serif;font-size:40px;font-weight:900;background:linear-gradient(90deg,var(--neon),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+section{padding:140px 0;position:relative}
+.section-header{text-align:center;margin-bottom:100px}
+.section-label{display:inline-block;background:rgba(255,0,110,.12);border:1px solid rgba(255,0,110,.4);border-radius:50px;padding:10px 28px;font-family:JetBrains Mono,monospace;font-size:12px;font-weight:700;color:var(--hot);margin-bottom:24px;text-transform:uppercase;letter-spacing:2px}
+.section-title{font-family:Orbitron,sans-serif;font-size:clamp(40px,5vw,64px);font-weight:900;margin-bottom:24px;text-transform:uppercase;letter-spacing:3px;background:linear-gradient(90deg,var(--cyan),var(--hot));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-desc{font-size:20px;color:var(--silver);max-width:700px;margin:0 auto;line-height:1.8}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px}
+.feature-card{background:var(--ghost);backdrop-filter:blur(15px);border:1px solid var(--mist);border-radius:24px;padding:48px;transition:.4s;position:relative;overflow:hidden;cursor:pointer}
+.feature-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(0,255,255,.15),transparent 70%);opacity:0;transition:.4s}
+.feature-card:hover::before{opacity:1}
+.feature-card:hover{transform:translateY(-12px);border-color:var(--cyan);box-shadow:0 24px 72px rgba(0,255,255,.25)}
+.feature-icon{width:72px;height:72px;background:linear-gradient(135deg,rgba(0,255,255,.2),rgba(57,255,20,.2));border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:28px;transition:.3s}
+.feature-card:hover .feature-icon{transform:scale(1.15) rotate(8deg);box-shadow:0 12px 40px rgba(0,255,255,.5)}
+.feature-card h3{font-family:Orbitron,sans-serif;font-size:26px;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.feature-card p{color:var(--silver);line-height:1.8;font-size:16px}
+.factions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}
+.faction-card{background:linear-gradient(135deg,var(--charcoal),var(--steel));backdrop-filter:blur(15px);border:1px solid var(--mist);border-radius:28px;overflow:hidden;transition:.4s;position:relative;cursor:pointer}
+.faction-card::after{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--cyan),var(--electric),var(--neon),var(--hot));background-size:300% 100%;animation:gradientSlide 4s linear infinite}
+@keyframes gradientSlide{to{background-position:300% 50%}}
+.faction-card:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 32px 96px rgba(0,255,255,.35);border-color:var(--cyan)}
+.faction-img{height:240px;background:linear-gradient(135deg,rgba(0,255,255,.25),rgba(255,0,110,.25));display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden}
+.faction-img::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent 30%,rgba(10,14,26,.9))}
+.faction-content{padding:40px}
+.faction-header{display:flex;justify-content:space-between;align-items:start;margin-bottom:20px}
+.faction-card h3{font-family:Orbitron,sans-serif;font-size:26px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.faction-badge{padding:8px 16px;border-radius:24px;font-family:JetBrains Mono,monospace;font-size:11px;font-weight:900;text-transform:uppercase;background:linear-gradient(135deg,var(--cyan),var(--electric));color:#000;white-space:nowrap;letter-spacing:1px}
+.faction-card p{color:var(--silver);line-height:1.8;margin-bottom:24px;font-size:15px}
+.faction-stats{display:flex;gap:24px;padding-top:24px;border-top:1px solid var(--mist)}
+.faction-stat{flex:1;text-align:center}
+.faction-stat-num{font-family:Orbitron,sans-serif;font-size:28px;font-weight:900;background:linear-gradient(90deg,var(--cyan),var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.faction-stat-lbl{font-family:JetBrains Mono,monospace;font-size:10px;color:var(--silver);text-transform:uppercase;margin-top:6px;letter-spacing:1px}
+.memberships-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px;max-width:1400px;margin:0 auto}
+.member-card{background:linear-gradient(135deg,rgba(10,14,26,.98),rgba(30,36,51,.98));backdrop-filter:blur(15px);border:3px solid var(--mist);border-radius:32px;padding:48px;transition:.4s;position:relative;overflow:hidden}
+.member-card::before{content:'';position:absolute;inset:-3px;background:linear-gradient(135deg,var(--cyan),var(--electric),var(--hot));border-radius:32px;opacity:0;transition:.4s;z-index:-1}
+.member-card:hover::before{opacity:.4}
+.member-card:hover{transform:translateY(-16px) scale(1.04);box-shadow:0 40px 120px rgba(0,255,255,.4);border-color:var(--cyan)}
+.member-card.featured{background:linear-gradient(135deg,rgba(255,0,110,.18),rgba(0,255,255,.18));border-color:var(--hot);transform:scale(1.08)}
+.member-card.featured::after{content:'⚡ MÁS POPULAR';position:absolute;top:28px;right:-42px;background:linear-gradient(135deg,var(--hot),var(--gold));color:#000;padding:8px 52px;font-family:Orbitron,sans-serif;font-size:11px;font-weight:900;letter-spacing:2px;transform:rotate(45deg);box-shadow:0 6px 24px rgba(255,0,110,.6)}
+.member-header{text-align:center;margin-bottom:40px}
+.member-icon{width:88px;height:88px;background:linear-gradient(135deg,rgba(0,255,255,.25),rgba(255,0,110,.25));border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:44px;margin:0 auto 24px;box-shadow:0 12px 48px rgba(0,255,255,.4)}
+.member-title{font-family:Orbitron,sans-serif;font-size:30px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:2px}
+.member-price{font-family:Orbitron,sans-serif;font-size:64px;font-weight:900;background:linear-gradient(90deg,var(--cyan),var(--hot));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:28px 0}
+.member-price small{font-size:24px;opacity:.8}
+.member-benefits{list-style:none;margin:40px 0}
+.member-benefits li{padding:16px 0;color:var(--silver);position:relative;padding-left:40px;font-size:16px;line-height:1.7}
+.member-benefits li::before{content:'✓';position:absolute;left:0;width:28px;height:28px;background:linear-gradient(135deg,var(--cyan),var(--electric));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:14px}
+.btn-member{width:100%;padding:22px;background:linear-gradient(135deg,var(--cyan),var(--electric));color:#000;text-align:center;border-radius:16px;text-decoration:none;font-family:Orbitron,sans-serif;font-weight:900;font-size:18px;text-transform:uppercase;letter-spacing:2px;display:block;margin-top:40px;transition:.3s;border:none;cursor:pointer;position:relative;overflow:hidden}
+.btn-member::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--electric),var(--neon));opacity:0;transition:.3s}
+.btn-member:hover::before{opacity:1}
+.btn-member span{position:relative;z-index:1}
+.btn-member:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(0,255,255,.6)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:32px}
+.testimonial-card{background:var(--ghost);backdrop-filter:blur(15px);border:1px solid var(--mist);border-radius:24px;padding:40px;transition:.3s;cursor:pointer}
+.testimonial-card:hover{transform:translateY(-8px);border-color:var(--hot);box-shadow:0 20px 64px rgba(255,0,110,.25)}
+.testimonial-rating{display:flex;gap:6px;margin-bottom:20px}
+.star{color:var(--gold);font-size:22px}
+.testimonial-content{color:var(--silver);line-height:1.9;margin-bottom:28px;font-size:16px}
+.testimonial-author{display:flex;align-items:center;gap:20px}
+.author-avatar{width:56px;height:56px;background:linear-gradient(135deg,var(--cyan),var(--hot));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Orbitron,sans-serif;font-weight:900;font-size:22px}
+.author-info h4{font-family:Orbitron,sans-serif;font-size:18px;font-weight:700;margin-bottom:4px}
+.author-info p{font-family:JetBrains Mono,monospace;font-size:12px;color:var(--silver);text-transform:uppercase}
+.faq-container{max-width:900px;margin:0 auto}
+.faq-item{background:var(--ghost);backdrop-filter:blur(15px);border:1px solid var(--mist);border-radius:20px;margin-bottom:20px;overflow:hidden;transition:.3s}
+.faq-item:hover{border-color:var(--cyan)}
+.faq-question{padding:28px 36px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:Orbitron,sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:1px;transition:.3s}
+.faq-question:hover{color:var(--cyan)}
+.faq-toggle{width:32px;height:32px;background:rgba(0,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;transition:.3s;flex-shrink:0}
+.faq-item.active .faq-toggle{background:var(--cyan);color:#000;transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-answer-content{padding:0 36px 28px;color:var(--silver);line-height:1.9;font-size:16px}
+.faq-item.active .faq-answer{max-height:600px}
+.cta-section{padding:140px 0;position:relative;overflow:hidden}
+.cta-container{max-width:1000px;margin:0 auto;text-align:center;background:linear-gradient(135deg,rgba(0,255,255,.12),rgba(255,0,110,.12));backdrop-filter:blur(30px);border:2px solid var(--mist);border-radius:40px;padding:100px 80px;position:relative;overflow:hidden}
+.cta-container::before{content:'';position:absolute;inset:-150%;background:radial-gradient(circle,rgba(0,255,255,.25),transparent 60%);animation:rotateCta 12s linear infinite}
+@keyframes rotateCta{to{transform:rotate(360deg)}}
+.cta-content{position:relative;z-index:1}
+.cta-container h2{font-family:Orbitron,sans-serif;font-size:clamp(36px,5vw,56px);font-weight:900;margin-bottom:28px;text-transform:uppercase;letter-spacing:3px;background:linear-gradient(90deg,var(--cyan),var(--hot));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-container p{font-size:20px;color:var(--silver);margin-bottom:48px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.8}
+.cta-actions{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+footer{background:rgba(10,14,26,.95);backdrop-filter:blur(30px);border-top:1px solid var(--mist);padding:80px 0 40px;margin-top:120px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:80px;margin-bottom:80px}
+.footer-brand h3{font-family:Orbitron,sans-serif;font-size:28px;font-weight:700;margin-bottom:20px;text-transform:uppercase;letter-spacing:2px;background:linear-gradient(90deg,var(--cyan),var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-brand p{color:var(--silver);line-height:1.9;margin-bottom:32px;font-size:15px}
+.social-links{display:flex;gap:16px}
+.social-link{width:48px;height:48px;background:var(--ghost);border:1px solid var(--mist);border-radius:12px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--silver);transition:.3s;font-size:20px}
+.social-link:hover{background:linear-gradient(135deg,var(--cyan),var(--electric));color:#000;transform:translateY(-4px);border-color:transparent}
+.footer-section h4{font-family:Orbitron,sans-serif;font-size:18px;font-weight:700;margin-bottom:24px;text-transform:uppercase;letter-spacing:1px}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:16px}
+.footer-links a{color:var(--silver);text-decoration:none;transition:.3s;display:inline-block;font-size:15px}
+.footer-links a:hover{color:var(--cyan);transform:translateX(6px)}
+.footer-bottom{padding-top:40px;border-top:1px solid var(--mist);display:flex;justify-content:space-between;align-items:center;color:var(--silver);font-size:14px;font-family:JetBrains Mono,monospace}
+.footer-bottom a{color:var(--cyan);text-decoration:none;font-weight:700}
+.scroll-top{position:fixed;bottom:40px;right:40px;width:60px;height:60px;background:linear-gradient(135deg,var(--cyan),var(--electric));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:24px;font-weight:900;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:999;box-shadow:0 12px 40px rgba(0,255,255,.5)}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{transform:translateY(-6px) scale(1.1);box-shadow:0 16px 56px rgba(0,255,255,.8)}
+@media (max-width:1024px){.hero-grid{grid-template-columns:1fr;gap:60px}.hero-visual{height:550px}.footer-grid{grid-template-columns:repeat(2,1fr);gap:50px}}
+@media (max-width:768px){.nav-links{position:fixed;top:90px;left:0;right:0;background:rgba(10,14,26,.99);backdrop-filter:blur(30px);border-bottom:1px solid var(--mist);flex-direction:column;padding:24px;gap:0;transform:translateY(-100%);opacity:0;pointer-events:none;transition:.3s}.nav-links.active{transform:translateY(0);opacity:1;pointer-events:all}.nav-links li{width:100%}.nav-links a{display:block;padding:20px;width:100%}.mobile-toggle{display:block}.hero{padding:140px 0 100px}.hero h1{font-size:40px}.features-grid,.factions-grid,.memberships-grid,.testimonials-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:50px}.footer-bottom{flex-direction:column;gap:20px;text-align:center}.cta-container{padding:80px 40px}.member-card.featured{transform:scale(1)}}
+@media (max-width:480px){.container{padding:0 16px}.hero-actions{flex-direction:column;width:100%}.btn{width:100%;justify-content:center}.stats-grid{grid-template-columns:1fr}.live-grid{grid-template-columns:1fr}}
+</style>
 </head>
-
 <body>
-  <div class="bg-animation">
-    <div class="stars" id="stars"></div>
-  </div>
+<canvas id="particles"></canvas>
+<div class="wrap">
+<nav id="navbar">
+<div class="nav-content">
+<a href="#inicio" class="logo-box">
+<div class="logo-circle">ER:LC</div>
+<div class="brand-text">
+<h1>Argentina Roleplay</h1>
+<small>Página oficial de Argentina Roleplay | ER:LC</small>
+</div>
+</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#inicio" class="active">Inicio</a></li>
+<li><a href="#features">Sobre Nosotros</a></li>
+<li><a href="#factions">Facciones y Organizaciones</a></li>
+<li><a href="#memberships">Membresisas</a></li>
+<li><a href="#testimonials">Dirección General</a></li>
+<li><a href="#faq">Preguntas Frecuentes</a></li>
+<li><a href="https://discord.gg/argrp" class="cta-btn" target="_blank">Únete a nuestro Discord</a></li>
+</ul>
+<button class="mobile-toggle" id="mobileToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
 
-  <div class="container">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="brand">
-        <div class="logo">ER:LC</div>
-        <div class="brand-text">
-          <h1>Argentina RP ┊ ER:LC</h1>
-          <small>Página oficial de Argentina Roleplay ER:LC</small>
-        </div>
-      </div>
-      
-      <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit?utm_content=DAG1z80J_O8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Normativas</a>
-        <a href="#memberships">Membresías</a>
-        <a href="https://www.roblox.com/es/communities/33453357/Argentina-RP-Spanish-ER-LC#!/about" target="_blank">Roblox</a>
-        <a href="https://discord.gg/argrp" class="btn-discord" target="_blank">Discord</a>
-      </div>
-    </nav>
+<section id="inicio" class="hero">
+<div class="container">
+<div class="hero-grid">
+<div>
+<div class="hero-badge">
+<span class="pulse-dot"></span>
++1600 Miembros Activos
+</div>
+<h1>DOMINA EL MEJOR <span class="gradient-text">ROLEPLAY</span> ARGENTINO</h1>
+<p>Unete a esta experiencia increible, contamos con distintas facciones que abajo de dejaremos más información sobre la comunidad y sobre nosotros, asi mismo te dejamos algunas preguntas frecuentes que puedes revisar.</p>
+<div class="hero-actions">
+<a href="https://discord.gg/argrp" class="btn btn-primary" target="_blank">
+<span>Unirse al Discord</span>
+</a>
+<a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit" class="btn btn-secondary" target="_blank">
+<span>Normativas Generales</span>
+</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="stats-mega">
+<h3>¿Te sientes listo?</h3>
+<p>Crea tu personaje, saca tu cédula y preparate para la mejor experiencia.</p>
+<div class="stats-grid">
+<div class="stat-box">
+<span class="stat-number">+1600</span>
+<span class="stat-label">Miembros</span>
+</div>
+<div class="stat-box">
+<span class="stat-number">Aperturas Diarias</span>
+<span class="stat-label">Momento de adrenalina</span>
+</div>
+<div class="stat-box">
+<span class="stat-number">Servidor Completo</span>
+<span class="stat-label">Tenemos facciones, empresas, eventos, sorteos y mucho mas.</span>
+</div>
+<div class="stat-box">
+<span class="stat-number">Roleplay Semi-Serio</span>
+<span class="stat-label">Pero es lo mejor</span>
+</div>
+</div>
+<a href="https://discord.gg/argrp" class="btn btn-primary" target="_blank" style="width:100%;justify-content:center">
+<span>UNIRSE AL DISCORD</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-      <div class="hero-content">
-        <h2>Vive el mejor roleplay acá, en Argentina RP.</h2>
-        <p>
-          Argentina Roleplay es una comunidad enfocada en ofrecer un roleplay realista y organizado dentro de ER:LC. Buscamos crear un entorno seguro y profesional donde los jugadores disfruten de experiencias auténticas inspiradas en el entorno argentino.
-          Nuestro propósito es brindar un espacio donde cada usuario pueda desarrollar su personaje, vivir situaciones realistas y formar parte de una comunidad unida, responsable y comprometida con el respeto, la inmersión y la calidad del rol.      
-        </p>
-        <div class="hero-buttons">
-          <a href="https://discord.gg/argrp" class="btn btn-primary" target="_blank">Unirse Ahora</a>
-          <a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit?utm_content=DAG1z80J_O8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn btn-secondary" target="_blank">Ver Normativas</a>
-        </div>
-      </div>
-      
-      <div class="hero-visual">
-        <div class="floating-card">
-          <h3>🎮 Comenzá Ya</h3>
-          <p>Creá el DNI de tu personaje y preparate para una aventura</p>
-          <div class="stats">
-            <div class="stat-item">
-              <div class="stat-number">+1600</div>
-              <div class="stat-label">Miembros</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">24/7</div>
-              <div class="stat-label">Activos</div>
-            </div>
-          </div>
-          <a href="https://discord.gg/argrp" class="btn btn-primary" target="_blank" style="width: 100%; margin-top: 20px;">Unirse al Discord</a>
-        </div>
-      </div>
-    </section>
+<section>
+<div class="container">
+<div class="live-banner">
+<div class="live-grid">
+<div class="live-stat">
+<div class="live-label">
+<span class="live-dot"></span>
+ACTIVOS EN ER:LC
+</div>
+<div class="live-value">40/40</div>
+</div>
+<div class="live-stat">
+<div class="live-label">
+<span class="live-dot"></span>
+HORARIOS APERTURA
+</div>
+<div class="live-value">Por la tarde</div>
+</div>
+<div class="live-stat">
+<div class="live-label">
+<span class="live-dot"></span>
+ECONOMIA
+</div>
+<div class="live-value">100% balanzeada</div>
+</div>
+<div class="live-stat">
+<div class="live-label">
+<span class="live-dot"></span>
+EVENTOS
+</div>
+<div class="live-value">3/MES</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Features Section -->
-    <section class="features">
-      <h2 class="section-title">¿Por qué Argentina RP?</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">👮</div>
-          <h3>Facciones Legales</h3>
-          <p>Policía de la Ciudad, Gendarmería, Policía Federal Argentina y más organizaciones para unirte.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎭</div>
-          <h3>Roleplay Auténtico</h3>
-          <p>Experimentá la adrenalina de ser un mafioso y combatir con las autoridades.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎉</div>
-          <h3>Eventos Exclusivos</h3>
-          <p>Participá en eventos, gana premios, senti el verdadero roleplay.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">💼</div>
-          <h3>Sistema Económico</h3>
-          <p>Trabajá, ganá dinero, creá tu empresa y construí tu imperio en el servidor.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🏆</div>
-          <h3>Recompensas</h3>
-          <p>Sistema de Membersias, beneficios exclusivos y recompensas por participación activa.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>Comunidad Activa</h3>
-          <p>Staff dedicado 24/7, comunidad amigable y soporte constante para todos los jugadores.</p>
-        </div>
-      </div>
-    </section>
+<section id="features">
+<div class="container">
+<div class="section-header">
+<span class="section-label">SOBRE NOSOTROS</span>
+<h2 class="section-title">¿POR QUÉ SOMOS ÚNICOS?</h2>
+<p class="section-desc">Descubre todo sobre nosotros a continuación.</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">👮</div>
+<h3>Facciones Legales</h3>
+<p>En Argentina Roleplay tenemos facciónes increibles como: Policia De La Ciudad, Gendarmeria Nacional, Policia Federal Argentina, Brigada Especial Halcon y mucho mas!</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎭</div>
+<h3>Organizaciones Criminales</h3>
+<p>Actualmente contamos con Bandas criminales que son la "chispa" del rol, ellos se encargan de cometer robos, secuestros, atentados, y más.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎉</div>
+<h3>Eventos Mensuales</h3>
+<p>En nuestra comunidad realizamos eventos con premios increibles, hacemos aproximadamente 3 eventos al mes, unete y ser el principal ganador.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">💼</div>
+<h3>Economía Balanzeada</h3>
+<p>Sistema de economia completo, con recompensas de trabajos increibles y sistema de transferencias, contamos con sueldos minimos de hasta $4,000 pesos, que esperas para unirte?</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🏆</div>
+<h3>Beneficios</h3>
+<p>Tenemos beneficios por Membresisas, Boost y donaciones increibles, abajo te saldra más información respecto a Membresias.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🤝</div>
+<h3>Equipo de STAFF</h3>
+<p>Equipo de Moderación completamente capacitado para resolver situaciones que pasen dentro de la comunidad, respeta las reglas o habran consecuencias. No todo es sanciones, ellos se encargan de que te lleves una buena experiencia.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🔒</div>
+<h3>Ambiente Seguro</h3>
+<p>En nuestra comunidad nos encargamos de que todos se lleven una experiencia unica, por eso es que prohibimos las faltas de respetos y te damos un ambito seguro.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">⚡</div>
+<h3>Actualizaciones Constantes</h3>
+<p>Cada dia traemos actualizaciones perfectas a nuestra comunidad, ¿Que esperas para formar parte de nosotros y generar un buen enotrno de roleplay divertido?</p>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Memberships Section -->
-    <section id="memberships" class="memberships">
-      <h2 class="section-title">Membresías Exclusivas</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">
-        Potenciá tu experiencia con beneficios únicos
-      </p>
-      
-      <div class="memberships-grid">
-        <div class="membership-card">
-          <div class="membership-header">
-            <div class="membership-title">Membresía 1</div>
-            <span class="badge">Nivel 1</span>
-          </div>
-          <div class="membership-price">50 <span style="font-size: 20px;">Robux</span></div>
-          <ul class="membership-benefits">
-            <li>$40,000 en efectivo inicial</li>
-            <li>Rol exclusivo Membresía 1</li>
-            <li>Acceso a canales especiales</li>
-            <li>Soporte prioritario</li>
-          </ul>
-          <a href="https://www.roblox.com/game-pass/954298347" class="btn-buy" target="_blank">Comprar Ahora</a>
-        </div>
+<section id="factions">
+<div class="container">
+<div class="section-header">
+<span class="section-label">FACCIONES Y ORGANIZACIONES</span>
+<h2 class="section-title">ELIGE TU DESTINO</h2>
+<p class="section-desc">Legal o ilegal, héroe o villano. Tu camino te espera</p>
+</div>
+<div class="factions-grid">
+<div class="faction-card">
+<div class="faction-img">👮‍♂️</div>
+<div class="faction-content">
+<div class="faction-header">
+<h3>PDLC | GNA | PFA | BEH</h3>
+<span class="faction-badge">LEGALES</span>
+</div>
+<p>Patrulla, encarcela, aplica cargos, investiga asesinatos y salva la ciudad con tus propias manos.</p>
+<div class="faction-stats">
+<div class="faction-stat">
+<span class="faction-stat-num">POSTULACIONES DIARIAS</span>
+<span class="faction-stat-lbl">Se el heroe de la ciudad</span>
+</div>
+<div class="faction-stat">
+<span class="faction-stat-num">+10</span>
+<span class="faction-stat-lbl">Puestos Disponibles</span>
+</div>
+</div>
+</div>
+</div>
+<div class="faction-card">
+<div class="faction-img">🎭</div>
+<div class="faction-content">
+<div class="faction-header">
+<h3>Organizaciones Criminales</h3>
+<span class="faction-badge" style="background:linear-gradient(135deg,#ff006e,#ff6b35)">ILEGAL</span>
+</div>
+<p>Construye tu imperio criminal, forma bandas, domina las calles y transforma el caos completo, perfecto si te gusta la adrenalina.</p>
+<div class="faction-stats">
+<div class="faction-stat">
+<span class="faction-stat-num">+10</span>
+<span class="faction-stat-lbl">Cupos Disponibles</span>
+</div>
+<div class="faction-stat">
+<span class="faction-stat-num">+5</span>
+<span class="faction-stat-lbl">Carteles</span>
+</div>
+</div>
+</div>
+</div>
+<div class="faction-card">
+<div class="faction-img">💼</div>
+<div class="faction-content">
+<div class="faction-header">
+<h3>Empresas</h3>
+<span class="faction-badge" style="background:linear-gradient(135deg,#ffd700,#ff6b35)">CIVIL</span>
+</div>
+<p>Creá tu empresa propia y profesional,  actualmente tenemos sobre medios de comunicación, seguridad privada, restaurantes de comida, investigaciones y mas.</p>
+<div class="faction-stats">
+<div class="faction-stat">
+<span class="faction-stat-num">+5</span>
+<span class="faction-stat-lbl">Cupos</span>
+</div>
+<div class="faction-stat">
+<span class="faction-stat-num">+5</span>
+<span class="faction-stat-lbl">Empresas</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="membership-card">
-          <div class="membership-header">
-            <div class="membership-title">Membresía 2</div>
-            <span class="badge">Nivel 2</span>
-          </div>
-          <div class="membership-price">100 <span style="font-size: 20px;">Robux</span></div>
-          <ul class="membership-benefits">
-            <li>$100,000 en efectivo inicial</li>
-            <li>Rol exclusivo Membresía 2</li>
-            <li>Enviar imágenes en Discord</li>
-            <li>Acceso a sorteos exclusivos</li>
-            <li>Prioridad en eventos</li>
-          </ul>
-          <a href="https://www.roblox.com/game-pass/854716479" class="btn-buy" target="_blank">Comprar Ahora</a>
-        </div>
+<section id="memberships">
+<div class="container">
+<div class="section-header">
+<span class="section-label">MEMBRESÍAS</span>
+<h2 class="section-title">AYUDANOS A CRECER</h2>
+<p class="section-desc">Recompensas increibles por Membresisas y Boost´s.</p>
+</div>
+<div class="memberships-grid">
+<div class="member-card">
+<div class="member-header">
+<div class="member-icon">♦️</div>
+<h3 class="member-title">Membresia 1</h3>
+</div>
+<div class="member-price">50 <small>Robux</small></div>
+<ul class="member-benefits">
+<li>$50,000 en la economia.</li>
+<li>Rol exclusivo de Membresia 1</li>
+<li>Canales especiales</li>
+<li>Posibilidades unicas</li>
+</ul>
+<a href="https://www.roblox.com/game-pass/954298347" class="btn-member" target="_blank">
+<span>COMPRAR MEMBRESIA 1</span>
+</a>
+</div>
+<div class="member-card">
+<div class="member-header">
+<div class="member-icon">🍀</div>
+<h3 class="member-title">Membresia 2</h3>
+</div>
+<div class="member-price">100 <small>Robux</small></div>
+<ul class="member-benefits">
+<li>$100,000 en la economia.</li>
+<li>Rol exclusivo Membresia 2</li>
+<li>Enviar imagenes en Chat</li>
+<li>Sorteos exclusivos</li>
+<li>Prioridad en eventos</li>
+</ul>
+<a href="https://www.roblox.com/game-pass/854716479" class="btn-member" target="_blank">
+<span>COMPRAR MEMBRESIA 2</span>
+</a>
+</div>
+<div class="member-card featured">
+<div class="member-header">
+<div class="member-icon">📀</div>
+<h3 class="member-title">Membresia 3</h3>
+</div>
+<div class="member-price">250 <small>Robux</small></div>
+<ul class="member-benefits">
+<li>$175,000 en la economia.</li>
+<li>Rol exclusivo Membresia 3</li>
+<li>Acceso a 1 trabajo adicional.</li>
+<li>Cupo facción ilegal</li>
+<li>Beneficios Anteriores</li>
+</ul>
+<a href="https://www.roblox.com/game-pass/854400540" class="btn-member" target="_blank">
+<span>COMPRAR MEMBRESIA 3</span>
+</a>
+</div>
+<div class="member-card">
+<div class="member-header">
+<div class="member-icon">💷</div>
+<h3 class="member-title">Membresia 4</h3>
+</div>
+<div class="member-price">500 <small>Robux</small></div>
+<ul class="member-benefits">
+<li>$250,000 en la economia.</li>
+<li>Rol exclusivo Membresia 4</li>
+<li>Cupo empresa GRATIS</li>
+<li>Todos los anteriores</li>
+<li>Acceso a Chat Vip</li>
+<li>Cupo de evento</li>
+</ul>
+<a href="https://www.roblox.com/game-pass/854768466" class="btn-member" target="_blank">
+<span>COMPRAR MEMBRESIA 4</span>
+</a>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="membership-card">
-          <div class="membership-header">
-            <div class="membership-title">Membresía 3</div>
-            <span class="badge">VIP</span>
-          </div>
-          <div class="membership-price">250 <span style="font-size: 20px;">Robux</span></div>
-          <ul class="membership-benefits">
-            <li>$175,000 en efectivo inicial</li>
-            <li>Rol exclusivo Membresía 3</li>
-            <li>1 trabajo garantizado</li>
-            <li>Cupo en facción ilegal</li>
-            <li>Todos los beneficios anteriores</li>
-          </ul>
-          <a href="https://www.roblox.com/game-pass/854400540" class="btn-buy" target="_blank">Comprar Ahora</a>
-        </div>
+<section id="testimonials">
+<div class="container">
+<div class="section-header">
+<span class="section-label">DIRECCION GENERAL</span>
+<h2 class="section-title">EQUIPO DE DIRECCION CAPACITADO PREVIAMENTE.</h2>
+<p class="section-desc">Ellos son la base de nuestra comunidad.</p>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-rating">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="testimonial-content">"El es el de la gran idea de constuir esta comunidad, su presencia no es diaria pero trabaja fuertemente para mantener nuestra comunidad activa, es la base del servidor."</p>
+<div class="testimonial-author">
+<div class="author-avatar">R</div>
+<div class="author-info">
+<h4>Rodri9486</h4>
+<p>Fundador / Owner - Hoolders</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-rating">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="testimonial-content">"El encargado de realizar Documentos, formularios, revisar que el equipo de moderación se comporte de forma adecuada y es la mano derecha del Fundador, su preciencia es diaria y es una persona divertida y con mucho humor".</p>
+<div class="testimonial-author">
+<div class="author-avatar">V</div>
+<div class="author-info">
+<h4>Valen71</h4>
+<p>Co-Fundador / Co-Owner - Hoolders</p>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-rating">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="testimonial-content">"El es el encargado de controlar a la mayoria de los usuarios, encargarse de actualizaciones, reportes hacia la administración, gestionar documentos, revisar formularios y ayudar a nuestro Co-Owner".</p>
+<div class="testimonial-author">
+<div class="author-avatar">S</div>
+<div class="author-info">
+<h4>Sr_Pan2407</h4>
+<p>Dirección - Director Ejecutivo</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="membership-card">
-          <div class="membership-header">
-            <div class="membership-title">Membresía 4</div>
-            <span class="badge">Diamante</span>
-          </div>
-          <div class="membership-price">500 <span style="font-size: 20px;">Robux</span></div>
-          <ul class="membership-benefits">
-            <li>$250,000 en efectivo inicial</li>
-            <li>Rol exclusivo Patrocinador</li>
-            <li>Cupo de empresa GRATIS</li>
-            <li>Insignia especial</li>
-            <li>Todos los beneficios anteriores</li>
-            <li>Rol exclusivo Membersia 4</li>
-          </ul>
-          <a href="https://www.roblox.com/game-pass/854768466" class="btn-buy" target="_blank">Comprar Ahora</a>
-        </div>
-      </div>
-    </section>
+<section id="faq">
+<div class="container">
+<div class="section-header">
+<span class="section-label">PREGUNTAS FRECUENTES</span>
+<h2 class="section-title">TODO LO QUE NECESITÁS SABER</h2>
+<p class="section-desc">Respuestas a las dudas más frecuentes en nuestra comunidad.</p>
+</div>
+<div class="faq-container">
+<div class="faq-item">
+<div class="faq-question">
+<span>¿Cómo empiezo en Argentina RP?</span>
+<div class="faq-toggle">▼</div>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">Primero, unite a nuestro Discord oficial. Luego, leé las normativas completas, creá tu DNI de personaje siguiendo el formato y esperá la aprobación de los encargados. Una vez aprobado, entrás al servidor de Roblox y comienza tu aventura.</div>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>¿Necesito membresía para jugar?</span>
+<div class="faq-toggle">▼</div>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">No, las membresías son completamente opcionales. Podés disfrutar toda la experiencia gratis. Las membresías solo dan beneficios extra como dinero inicial, roles VIP´s y acceso a contenido premium.</div>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>¿Cómo me uno a una facción?</span>
+<div class="faq-toggle">▼</div>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">Cada facción tiene su proceso de reclutamiento, generalmente llenás un formulario en Discord, pasás por una capacitación y cumplís los requisitos específicos. Algunos roles requieren experiencia previa.</div>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>¿Hay eventos regulares?</span>
+<div class="faq-toggle">▼</div>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">Sí, organizamos eventos semanales: purgas, torneos, carreras ilegales, subastas y eventos de temporada con premios exclusivos. Los anuncios se hacen en Discord con anticipación.</div>
+</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>¿Puedo crear mi propia empresa?</span>
+<div class="faq-toggle">▼</div>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">¡Absolutamente! Una vez que estes en nuestro Discord, puedes dirigirte al canal de tienda y comprar el item, luego abres Ticket y nuestro equipo de Soporte le enviara una plantilla.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-      <p>© <span id="year"></span> Argentina RP ┊ ER:LC — Todos los derechos reservados</p>
-      <p style="margin-top: 10px;">Programador: <a href="#">@vladimirfernan</a></p>
-    </footer>
-  </div>
+<section class="cta-section">
+<div class="container">
+<div class="cta-container">
+<div class="cta-content">
+<h2>¿LISTO PARA LA ACCIÓN?</h2>
+<p>Más de 1600 jugadores ya están viviendo la experiencia. Tu leyenda comienza AHORA.</p>
+<div class="cta-actions">
+<a href="https://discord.gg/argrp" class="btn btn-primary" target="_blank">
+<span>UNIRSE AL DISCORD</span>
+</a>
+<a href="https://www.roblox.com/es/communities/33453357/Argentina-RP-Spanish-ER-LC#!/about" class="btn btn-secondary" target="_blank">
+<span>GRUPO OFICIAL DE ROBLOX</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Stars
-    const starsContainer = document.getElementById('stars');
-    for
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<h3>Argentina Roleplay</h3>
+<p>Pagina web ficticia, la misma esta hecha para un juego virtual de la plataforma de Roblox y Discord. Funcional desde 2026.</p>
+<div class="social-links">
+<a href="https://discord.gg/argrp" class="social-link" target="_blank" title="Discord">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/></svg>
+</a>
+<a href="https://www.roblox.com/es/communities/33453357/Argentina-RP-Spanish-ER-LC#!/about" class="social-link" target="_blank" title="Roblox">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.926 23.998L.002 18.974 5.026 0l18.922 5.026-5.022 18.972zm-9.494-8.485l3.511.928.929-3.511-3.511-.928-.929 3.511z"/></svg>
+</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Links</h4>
+<ul class="footer-links">
+</div>
+<div class="footer-section">
+<h4>Recursos</h4>
+<ul class="footer-links">
+<li><a href="https://www.canva.com/design/DAG1z80J_O8/dAimr2cXpgcwnpMevlf41w/edit" target="_blank">Normativas</a></li>
+<li><a href="https://discord.gg/argrp" target="_blank">Soporte</a></li>
+<li><a href="#Preguntas Frecuentes">Preguntas Frecuentes</a></li>
+<li><a href="https://discord.gg/argrp" target="_blank">Reportar Bug / Errores</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Comunidad</h4>
+<ul class="footer-links">
+<li><a href="https://discord.gg/argrp" target="_blank">Discord</a></li>
+<li><a href="https://www.roblox.com/es/communities/33453357/Argentina-RP-Spanish-ER-LC#!/about" target="_blank">Grupo Roblox</a></li>
+<li><a href="https://discord.gg/argrp" target="_blank">Eventos</a></li>
+<li><a href="https://discord.gg/argrp" target="_blank">Actualizaciones</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span id="year"></span> Argentina RP — Todos los derechos reservados, 2026.</p>
+<p>Dev: <a href="#">@vladimirfernan</a></p>
+</div>
+</div>
+</footer>
 
+<div class="scroll-top" id="scrollTop">↑</div>
+</div>
 
-
-
-
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let particles=[];
+class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.vx=(Math.random()-.5)*.5;this.vy=(Math.random()-.5)*.5;this.size=Math.random()*2+1}update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1}draw(){ctx.fillStyle='rgba(0,255,255,0.4)';ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill()}}
+for(let i=0;i<80;i++)particles.push(new Particle());
+function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw()});requestAnimationFrame(animate)}
+animate();
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight});
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50)});
+const mobileToggle=document.getElementById('mobileToggle');
+const navLinks=document.getElementById('navLinks');
+mobileToggle.addEventListener('click',()=>navLinks.classList.toggle('active'));
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('active')));
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){const href=this.getAttribute('href');if(href!=='#'){e.preventDefault();const target=document.querySelector(href);if(target){const offsetTop=target.offsetTop-90;window.scrollTo({top:offsetTop,behavior:'smooth'})}}})});
+const sections=document.querySelectorAll('section[id]');
+const navLinksAll=document.querySelectorAll('.nav-links a[href^="#"]');
+window.addEventListener('scroll',()=>{let current='';sections.forEach(section=>{const sectionTop=section.offsetTop-120;const sectionHeight=section.clientHeight;if(window.scrollY>=sectionTop&&window.scrollY<sectionTop+sectionHeight)current=section.getAttribute('id')});navLinksAll.forEach(link=>{link.classList.remove('active');if(link.getAttribute('href')==='#'+current)link.classList.add('active')})});
+const faqItems=document.querySelectorAll('.faq-item');
+faqItems.forEach(item=>{const question=item.querySelector('.faq-question');question.addEventListener('click',()=>{const isActive=item.classList.contains('active');faqItems.forEach(faqItem=>faqItem.classList.remove('active'));if(!isActive)item.classList.add('active')})});
+const scrollTop=document.getElementById('scrollTop');
+window.addEventListener('scroll',()=>scrollTop.classList.toggle('visible',window.scrollY>300));
+scrollTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const observerOptions={threshold:0.1,rootMargin:'0px 0px -50px 0px'};
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}})},observerOptions);
+const animateElements=document.querySelectorAll('.feature-card,.faction-card,.member-card,.testimonial-card');
+animateElements.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.6s ease, transform 0.6s ease';observer.observe(el)});
+</script>
+</body>
+</html>
